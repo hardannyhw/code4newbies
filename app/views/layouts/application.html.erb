@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code4newbies</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+   <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+</head>
+<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=152310624972";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+<nav>
+    <div class="nav-wrapper">
+      <%= link_to "Code4Newbies", root_path, :class => "brand-logo" %>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+      	<li><a href="<%= root_path %>"><i class="material-icons">view_list</i></a></li>
+      	<li><a href="<%= pages_about_path %>"><i class="material-icons">perm_identity</i></a></li>
+      	<li><a href="<%= pages_contact_path %>"><i class="material-icons">room</i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="<%= root_path %>"><i class="material-icons">view_list</i></a></li>
+      	<li><a href="<%= pages_about_path %>"><i class="material-icons">perm_identity</i></a></li>
+      	<li><a href="<%= pages_contact_path %>"><i class="material-icons">room</i></a></li>      
+      </ul>
+    </div>
+ </nav>
+ 
+ 	<div class="row">
+	 	<div class="col m10 offset-m1">
+	 		<%= yield %>
+	 	</div>
+ 	</div>
+ 	
+	<script>
+	
+		 $(".button-collapse").sideNav();
+		
+	</script>
+		
+
+</body>
+</html>
